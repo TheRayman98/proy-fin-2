@@ -9,24 +9,22 @@ body {
 /* Navegación */
 .nav {
     background-color: #ffffff;
-    position: relative;
-    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     padding: 10px 20px;
-    display: flex; /* Activa Flexbox */
-    flex-wrap: wrap; /* Permite ajustar contenido en pantallas pequeñas */
-    justify-content: center; /* Por defecto, centra el contenido */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    display: inline-block;
     width: 300px;
     height: auto;
 }
 
-/* Contacto */
 .contacto {
-    display: none; /* Ocultar enlaces por defecto */
     position: absolute;
     top: 10px;
     right: 20px;
@@ -42,154 +40,217 @@ body {
 /* Contenedor principal */
 .wrapper-box {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; /* Distribuye las columnas */
+    align-items: center; /* Alinea verticalmente */
     gap: 20px;
     padding: 20px;
 }
 
-/* Descripción */
-.descripción {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
+/* Columna izquierda */
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 45%; /* Ocupa el lado izquierdo */
 }
 
-/* Contenedor del bloque morado e imagen */
-.bloque-inferior {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    gap: 20px;
+/* Descripción */
+.descripción h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Tamaño responsivo */
+    font-weight: bold;
+    color: #0b0f1a;
+    margin-bottom: 10px;
+}
+
+.descripción p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem); /* Tamaño responsivo */
+    color: #555555;
+    line-height: 1.5;
 }
 
 /* Bloque Morado */
 .box-3 {
-    background: #604aff;
-    color: white;
+    background-color: #604aff;
+    color: #ffffff;
     padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    flex: 1;
-    max-width: 45%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 15px;
+    font-size: clamp(1rem, 3vw, 1.2rem); /* Tamaño responsivo */
+    font-weight: bold;
+    line-height: 1.5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-/* Imagen y texto */
+/* Columna derecha */
 .contenedor-imagen {
-    flex: 1;
-    max-width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 20px;
+    max-width: 50%; /* Ocupa el lado derecho */
 }
 
 .imagen {
     width: 100%;
     height: auto;
-    display: block;
     border-radius: 10px;
 }
 
-/* Bloque de texto debajo de la imagen */
 .box-2 {
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
-.footer {
-    margin-left: 25px;
+.box-2 h4 {
+    font-size: clamp(1.3rem, 4vw, 1.5rem); /* Tamaño responsivo */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.box-2 p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem); /* Tamaño responsivo */
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+/* Botón personalizado */
+.button-primary {
+    display: inline-flex; /* Flexbox para organizar el texto y la flecha */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between; /* Separa el texto y la flecha */
+    background-color: #0b0f1a; /* Fondo oscuro */
+    color: #ffffff; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave */
+    gap: 10px; /* Espacio entre texto e ícono */
+}
+
+/* Contenedor del icono */
+.button-primary .icon-container {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Tamaño cuadrado */
+    height: 30px;
+    transition: background-color 0.3s ease;
+}
+
+/* Flecha */
+.button-primary .icon-container .arrow {
+    color: #0b0f1a; /* Color de la flecha */
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Efecto hover */
+.button-primary:hover {
+    background-color: #1c2230; /* Cambio de fondo */
+}
+
+.button-primary:hover .icon-container {
+    background-color: #e5e5e5; /* Cambio del fondo del ícono */
 }
 
 /* RESPONSIVIDAD */
 
-/* Pantallas menores a 480px */
-@media screen and (max-width: 480px) {
-    .nav {
-        flex-direction: column; /* Centra logo y contacto verticalmente */
-        justify-content: center;
-        align-items: center; /* Centra el contenido */
-    }
-
-    .logo {
-        margin: 0 auto; /* Centra el logo horizontalmente */
-    }
-
-    .bloque-inferior {
-        flex-direction: column; /* Apila los elementos */
-    }
-
-    .box-3, .contenedor-imagen {
-        max-width: 100%;
+/* Pantallas menores a 768px */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .wrapper-box {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center;
     }
 
     .contacto {
         display: none;
     }
+
+    .columna-izquierda,
+    .contenedor-imagen {
+        max-width: 100%; /* Ocupan todo el ancho */
+    }
+
+    .descripción {
+        text-align: center;
+    }
+
+    .box-3 {
+        text-align: center;
+        display: none; /* Oculta el bloque morado */
+    }
+
+    .descripción {
+        display: none;
+    }
 }
 
-/* Pantallas entre 480px y 768px */
-@media screen and (min-width: 480px) and (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        justify-content: center; /* Centra logo horizontalmente */
+/* Pantallas menores a 480px */
+@media screen and (max-width: 480px) {
+    .wrapper-box {
+        flex-direction: column; /* Apila los elementos verticalmente */
         align-items: center;
     }
-
-    .logo {
-        margin: 0 auto; /* Centra el logo */
+    .contacto{
+        display: none;
     }
 
-    .bloque-inferior {
-        flex-direction: column; /* Apila los elementos */
+    .columna-izquierda {
+        order: -1; /* Coloca la descripción encima */
+        max-width: 100%; /* Ocupa todo el ancho */
+        text-align: center;
     }
 
-    .box-3, .contenedor-imagen {
-        max-width: 100%;
+    .descripción h1 {
+        font-size: 1.8rem; /* Tamaño ajustado para pantallas pequeñas */
     }
 
-    .contacto, .descripción {
-        display: none; /* Oculta contacto y descripción */
+    .descripción p {
+        font-size: 0.9rem;
+    }
+
+    .box-3 {
+        display: none; /* Oculta el bloque morado */
+    }
+
+    .contenedor-imagen {
+        max-width: 100%; /* Ocupa todo el ancho */
+    }
+
+    .box-2 h4 {
+        font-size: 1.3rem;
+    }
+
+    .box-2 p {
+        font-size: 0.9rem;
     }
 }
 
 /* Pantallas mayores a 768px */
 @media screen and (min-width: 768px) {
-    .nav {
-        justify-content: flex-start; /* Mueve el contenido hacia la izquierda */
-    }
-
-    .logo {
-        margin-right: auto; /* Alinea el logo a la izquierda */
+    .wrapper-box {
+        flex-direction: row; /* Mantiene elementos en fila */
+        justify-content: space-between;
+        align-items: center;
     }
 
     .contacto {
-        display: block; /* Muestra los enlaces */
+        display: block;
     }
 
-    .bloque-inferior {
-        display: flex;
-        flex-direction: row; /* Mantiene elementos en fila */
-        justify-content: center;
-        align-items: center;
-    }
-
-    .box-3 {
-        display: flex; /* Muestra el bloque morado */
-        align-items: center;
-        justify-content: center;
+    .columna-izquierda {
+        max-width: 45%; /* Ocupa el lado izquierdo */
     }
 
     .contenedor-imagen {
-        flex-direction: column; /* Mantiene imagen y texto apilados */
-        max-width: 50%;
-    }
-
-    .descripción {
-        display: block; /* Muestra descripción */
+        flex-direction: column;
+        max-width: 50%; /* Ocupa el lado derecho */
     }
 }
