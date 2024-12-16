@@ -1,0 +1,195 @@
+/* General */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navegación */
+.nav {
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    padding: 10px 20px;
+    display: flex; /* Activa Flexbox */
+    flex-wrap: wrap; /* Permite ajustar contenido en pantallas pequeñas */
+    justify-content: center; /* Por defecto, centra el contenido */
+    align-items: center; /* Centra verticalmente */
+}
+
+.logo {
+    display: inline-block;
+    width: 300px;
+    height: auto;
+}
+
+/* Contacto */
+.contacto {
+    display: none; /* Ocultar enlaces por defecto */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+/* Contenedor principal */
+.wrapper-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Descripción */
+.descripción {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del bloque morado e imagen */
+.bloque-inferior {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 20px;
+}
+
+/* Bloque Morado */
+.box-3 {
+    background: #604aff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    flex: 1;
+    max-width: 45%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Imagen y texto */
+.contenedor-imagen {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Bloque de texto debajo de la imagen */
+.box-2 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer {
+    margin-left: 25px;
+}
+
+/* RESPONSIVIDAD */
+
+/* Pantallas menores a 480px */
+@media screen and (max-width: 480px) {
+    .nav {
+        flex-direction: column; /* Centra logo y contacto verticalmente */
+        justify-content: center;
+        align-items: center; /* Centra el contenido */
+    }
+
+    .logo {
+        margin: 0 auto; /* Centra el logo horizontalmente */
+    }
+
+    .bloque-inferior {
+        flex-direction: column; /* Apila los elementos */
+    }
+
+    .box-3, .contenedor-imagen {
+        max-width: 100%;
+    }
+
+    .contacto {
+        display: none;
+    }
+}
+
+/* Pantallas entre 480px y 768px */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        justify-content: center; /* Centra logo horizontalmente */
+        align-items: center;
+    }
+
+    .logo {
+        margin: 0 auto; /* Centra el logo */
+    }
+
+    .bloque-inferior {
+        flex-direction: column; /* Apila los elementos */
+    }
+
+    .box-3, .contenedor-imagen {
+        max-width: 100%;
+    }
+
+    .contacto, .descripción {
+        display: none; /* Oculta contacto y descripción */
+    }
+}
+
+/* Pantallas mayores a 768px */
+@media screen and (min-width: 768px) {
+    .nav {
+        justify-content: flex-start; /* Mueve el contenido hacia la izquierda */
+    }
+
+    .logo {
+        margin-right: auto; /* Alinea el logo a la izquierda */
+    }
+
+    .contacto {
+        display: block; /* Muestra los enlaces */
+    }
+
+    .bloque-inferior {
+        display: flex;
+        flex-direction: row; /* Mantiene elementos en fila */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box-3 {
+        display: flex; /* Muestra el bloque morado */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contenedor-imagen {
+        flex-direction: column; /* Mantiene imagen y texto apilados */
+        max-width: 50%;
+    }
+
+    .descripción {
+        display: block; /* Muestra descripción */
+    }
+}
