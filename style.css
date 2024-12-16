@@ -14,7 +14,6 @@ body {
     z-index: 1000;
     padding: 10px 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -190,6 +189,9 @@ body {
     .descripción {
         display: none;
     }
+    .nav{
+        justify-content: center;
+    }
 }
 
 /* Pantallas menores a 480px */
@@ -200,6 +202,10 @@ body {
     }
     .contacto{
         display: none;
+    }
+
+    .nav{
+        justify-content: center;
     }
 
     .columna-izquierda {
